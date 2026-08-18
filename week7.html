@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 7 – CSS Syntax, Selectors, and Types</title>
+  <!-- External CSS keeps the lesson content separate from its design. -->
+  <link rel="stylesheet" href="weekly-lessons.css">
+</head>
+<body>
+  <header class="topbar"><div class="topbar-inner"><a class="brand" href="index.html">CSS Learning Hub</a><nav class="week-nav" aria-label="Weekly lessons"><a class="active" href="week7.html">Week 7</a><a href="week8.html">Week 8</a><a href="week9.html">Week 9</a><a href="index.html">Main Page</a></nav></div></header>
+  <section class="lesson-hero"><div class="lesson-hero-inner"><span class="week-label">WEEK 7 • COMPLETE LESSON</span><h1>CSS Syntax, Selectors, and Types</h1><p>Learn how CSS rules are written, how selectors target HTML elements, how the cascade chooses a winning style, and when to use inline, internal, or external CSS.</p><div class="hero-links"><a class="hero-button" href="#objectives">Start Lesson</a><a class="hero-button secondary" href="#practice">Go to Activities</a></div></div></section>
+
+  <main class="lesson-layout">
+    <aside class="toc"><h2>Lesson Contents</h2><ol><li><a href="#objectives">Objectives</a></li><li><a href="#vocabulary">Vocabulary</a></li><li><a href="#purpose">HTML vs CSS</a></li><li><a href="#syntax">CSS Syntax</a></li><li><a href="#selectors">Selectors</a></li><li><a href="#types">Types of CSS</a></li><li><a href="#cascade">Cascade & Specificity</a></li><li><a href="#errors">Common Errors</a></li><li><a href="#practice">Activities</a></li><li><a href="#assessment">Assessment</a></li></ol></aside>
+    <div class="lesson-content">
+      <section class="lesson-section" id="objectives"><h2>Learning Objectives</h2><div class="objective-grid"><ul class="checklist"><li>Explain the purpose of CSS.</li><li>Identify selector, property, and value.</li><li>Write a valid declaration block.</li><li>Connect an external stylesheet.</li></ul><ul class="checklist"><li>Use six important selector types.</li><li>Compare the three types of CSS.</li><li>Explain cascade, inheritance, and specificity.</li><li>Correct common CSS errors.</li></ul></div></section>
+
+      <section class="lesson-section" id="vocabulary"><h2>Essential Vocabulary</h2><dl class="vocabulary"><dt>CSS</dt><dd>Cascading Style Sheets; controls webpage presentation.</dd><dt>Rule Set</dt><dd>A selector plus a declaration block.</dd><dt>Selector</dt><dd>The pattern that identifies elements to style.</dd><dt>Property</dt><dd>The design feature being changed.</dd><dt>Value</dt><dd>The setting assigned to a property.</dd><dt>Declaration</dt><dd>A property-and-value pair ending with a semicolon.</dd><dt>Cascade</dt><dd>The process used to decide which competing rule applies.</dd><dt>Inheritance</dt><dd>When a child receives certain styles from its parent.</dd><dt>Specificity</dt><dd>The strength or priority of a selector.</dd><dt>Pseudo-class</dt><dd>A selector for a special state such as :hover.</dd></dl></section>
+
+      <section class="lesson-section" id="purpose"><h2>1. HTML Structure vs CSS Design</h2><table class="comparison-table"><thead><tr><th>HTML</th><th>CSS</th></tr></thead><tbody><tr><td>Creates headings, paragraphs, links, forms, lists, and tables.</td><td>Controls colors, fonts, backgrounds, spacing, layout, and effects.</td></tr><tr><td>Uses tags such as <code>&lt;h1&gt;</code> and <code>&lt;p&gt;</code>.</td><td>Uses selectors, properties, and values.</td></tr><tr><td>Answers: “What is on the page?”</td><td>Answers: “How should it look?”</td></tr></tbody></table><div class="remember"><strong>Remember:</strong> HTML is the structure; CSS is the presentation.</div></section>
+
+      <section class="lesson-section" id="syntax"><h2>2. CSS Syntax</h2><div class="syntax-diagram">selector { property: value; }</div><div class="code-output"><pre><code>p {
+  color: #176b87;
+  font-size: 18px;
+}</code></pre><div class="output-box"><span class="output-label">ACTUAL OUTPUT</span><p class="w7-paragraph">This paragraph uses an element selector.</p></div></div><h3>Parts of the Rule</h3><ul><li><code>p</code> is the selector.</li><li><code>color</code> and <code>font-size</code> are properties.</li><li><code>#176b87</code> and <code>18px</code> are values.</li><li>A colon separates property and value.</li><li>A semicolon ends each declaration.</li><li>Curly braces contain the declarations.</li></ul><h3>CSS Comments</h3><pre><code>/* This comment explains the next rule. */
+h1 { color: navy; }</code></pre></section>
+
+      <section class="lesson-section" id="selectors"><h2>3. Important CSS Selectors</h2><div class="concept-grid three"><article class="concept-card"><h3>Element</h3><code>p { }</code><p>Targets every matching tag.</p></article><article class="concept-card"><h3>Class</h3><code>.highlight { }</code><p>Reusable on many elements.</p></article><article class="concept-card"><h3>ID</h3><code>#unique { }</code><p>Targets one unique element.</p></article><article class="concept-card"><h3>Universal</h3><code>* { }</code><p>Targets all elements.</p></article><article class="concept-card"><h3>Grouped</h3><code>h1, h2, p { }</code><p>One rule for several selectors.</p></article><article class="concept-card"><h3>Pseudo-class</h3><code>a:hover { }</code><p>Targets a special state.</p></article></div><h3>Descendant and Child Selectors</h3><pre><code>nav a { color: white; }       /* Any link inside nav */
+nav > a { font-weight: bold; } /* Direct child link */</code></pre><h3>Live Examples</h3><div class="code-output"><pre><code>.w7-highlight {
+  padding: 12px;
+  background: #ffd166;
+}
+#w7-unique {
+  border-left: 5px solid #64ccc5;
+}</code></pre><div class="output-box"><p class="w7-highlight">Class selector output</p><p id="w7-unique">ID selector output</p><a class="w7-hover" href="#selectors">Hover over this link</a></div></div></section>
+
+      <section class="lesson-section" id="types"><h2>4. Three Types of CSS</h2><table class="comparison-table"><thead><tr><th>Type</th><th>Location</th><th>Best Use</th><th>Example</th></tr></thead><tbody><tr><td>Inline</td><td>Inside an HTML opening tag</td><td>One quick, unique change</td><td><code>style="color:red;"</code></td></tr><tr><td>Internal</td><td>Inside <code>&lt;style&gt;</code> in the head</td><td>One standalone webpage</td><td><code>&lt;style&gt; p { } &lt;/style&gt;</code></td></tr><tr><td>External</td><td>Separate .css file</td><td>Organized projects and many pages</td><td><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></td></tr></tbody></table><div class="note"><strong>Recommended:</strong> Use external CSS so content and design remain organized.</div></section>
+
+      <section class="lesson-section" id="cascade"><h2>5. Cascade, Inheritance, and Specificity</h2><div class="concept-grid"><article class="concept-card"><h3>Cascade</h3><p>When rules have equal strength, the later rule normally wins.</p><pre><code>p { color: blue; }
+p { color: green; } /* wins */</code></pre></article><article class="concept-card"><h3>Inheritance</h3><p>Some styles such as color and font-family pass from parent to child.</p><pre><code>body {
+  color: #243b53;
+  font-family: Arial;
+}</code></pre></article></div><h3>Basic Specificity</h3><p><span class="tag">Inline style</span> &gt; <span class="tag">ID</span> &gt; <span class="tag">Class / pseudo-class</span> &gt; <span class="tag">Element</span></p><div class="warning"><strong>Avoid overusing <code>!important</code>:</strong> it makes CSS harder to correct and maintain.</div></section>
+
+      <section class="lesson-section" id="errors"><h2>6. Common Errors and Corrections</h2><table class="comparison-table"><thead><tr><th>Incorrect</th><th>Correct</th><th>Problem</th></tr></thead><tbody><tr><td><code>color blue;</code></td><td><code>color: blue;</code></td><td>Missing colon</td></tr><tr><td><code>font-size:18px</code></td><td><code>font-size:18px;</code></td><td>Missing semicolon</td></tr><tr><td><code>#card</code> for class="card"</td><td><code>.card</code></td><td>Wrong symbol</td></tr><tr><td><code>background-color #fff;</code></td><td><code>background-color:#fff;</code></td><td>Missing colon</td></tr><tr><td>Wrong CSS filename</td><td>Match the real filename</td><td>Broken file link</td></tr></tbody></table></section>
+
+      <section class="lesson-section" id="practice"><h2>7. Guided and Independent Activities</h2><div class="practice-grid"><article class="practice-card"><h3>Style My Web Page</h3><ol><li>Create a heading, paragraph, and button.</li><li>Connect external CSS.</li><li>Use element, class, and ID selectors.</li><li>Change color, font, and background.</li></ol></article><article class="practice-card"><h3>Fix and Organize CSS</h3><ol><li>Find missing colons and semicolons.</li><li>Correct selector names.</li><li>Remove repeated declarations.</li><li>Arrange rules by section.</li></ol></article><article class="practice-card"><h3>Selector Hunt</h3><ol><li>Find six selector types.</li><li>Label each selector.</li><li>Identify the target HTML.</li><li>Explain why it is appropriate.</li></ol></article><article class="practice-card"><h3>CSS Type Comparison</h3><ol><li>Use inline CSS.</li><li>Repeat with internal CSS.</li><li>Repeat with external CSS.</li><li>Compare organization.</li></ol></article></div></section>
+
+      <section class="lesson-section" id="assessment"><h2>8. Assessment and Mastery Check</h2><div class="assessment-grid"><article class="assessment-card"><h3>Students Can...</h3><ul class="checklist"><li>Write a valid CSS rule.</li><li>Use four selector types.</li><li>Connect external CSS.</li><li>Explain specificity.</li><li>Correct syntax errors.</li></ul></article><article class="assessment-card"><h3>Exit Questions</h3><ol><li>What are the parts of a CSS rule?</li><li>When should a class be used?</li><li>Why is external CSS recommended?</li><li>Which is stronger: ID or element?</li><li>What does inheritance mean?</li></ol></article></div></section>
+    </div>
+  </main>
+  <footer class="page-footer"><p>Week 7 Complete Lesson • <a href="week8.html">Continue to Week 8 →</a></p></footer>
+</body>
+</html>

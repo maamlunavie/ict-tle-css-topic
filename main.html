@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bright Future ICT Club</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero" id="home">
+    <nav class="navbar">
+      <a class="logo" href="#home">BF ICT Club</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#join">Join</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-content">
+      <p class="eyebrow">CREATE • CODE • CONNECT</p>
+      <h1>Build your ideas<br><span>one line at a time.</span></h1>
+      <p class="hero-text">A student-friendly webpage that demonstrates CSS selectors, colors, backgrounds, fonts, spacing, tables, shadows, transforms, transitions, and animation.</p>
+      <a class="button primary-button" href="#skills">Explore the lesson</a>
+    </div>
+    <div class="floating-code" aria-hidden="true">&lt;/&gt;</div>
+  </header>
+
+  <main>
+    <section class="section about" id="about">
+      <div>
+        <p class="section-label">WEEK 7</p>
+        <h2>CSS Syntax and Selectors</h2>
+        <p>CSS controls the appearance of HTML elements. A rule contains a <strong>selector</strong>, a <strong>property</strong>, and a <strong>value</strong>.</p>
+        <div class="code-sample">
+          <code>p { color: #173c36; }</code>
+        </div>
+        <p>The selector <code>p</code> targets paragraphs, <code>color</code> is the property, and <code>#173c36</code> is the value.</p>
+      </div>
+      <div class="selector-card">
+        <h3>Selector Guide</h3>
+        <ul class="check-list">
+          <li><strong>Element:</strong> <code>h1</code>, <code>p</code>, <code>table</code></li>
+          <li><strong>Class:</strong> <code>.button</code>, reusable on many elements</li>
+          <li><strong>ID:</strong> <code>#about</code>, used for one unique element</li>
+          <li><strong>Pseudo-class:</strong> <code>a:hover</code>, styles a special state</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section skills-section" id="skills">
+      <p class="section-label">WEEK 8</p>
+      <h2>Style the Building Blocks</h2>
+      <div class="card-grid">
+        <article class="skill-card">
+          <div class="icon">🎨</div>
+          <h3>Colors & Fonts</h3>
+          <p>Use readable colors, suitable typefaces, and clear heading sizes.</p>
+          <a href="#join">Try the form →</a>
+        </article>
+        <article class="skill-card featured">
+          <div class="icon">📦</div>
+          <h3>Box Model</h3>
+          <p>Content is surrounded by padding, border, and margin.</p>
+          <a href="#box-demo">See the box →</a>
+        </article>
+        <article class="skill-card">
+          <div class="icon">✨</div>
+          <h3>Effects</h3>
+          <p>Transitions and animations make interaction smooth and meaningful.</p>
+          <a href="#schedule">View schedule →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section box-section" id="box-demo">
+      <div class="box-demo">
+        <span>margin</span>
+        <div class="border-layer">
+          <span>border</span>
+          <div class="padding-layer">
+            <span>padding</span>
+            <div class="content-layer">CONTENT</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="section-label">WEEK 9</p>
+        <h2>Box Model, Shadow & Transform</h2>
+        <p>Every element is a box. Good spacing prevents content from looking crowded. A subtle shadow adds depth, while <code>transform</code> can move, rotate, or resize an element.</p>
+        <p class="tip"><strong>Hover over the cards:</strong> they move upward using <code>transform: translateY()</code> and change smoothly because of <code>transition</code>.</p>
+      </div>
+    </section>
+
+    <section class="section schedule-section" id="schedule">
+      <p class="section-label">STYLISH TABLE</p>
+      <h2>Four-Week Learning Schedule</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Week</th><th>Focus</th><th>Performance Task</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>7</td><td>Syntax, selectors, CSS types</td><td>Style My Web Page</td></tr>
+            <tr><td>8</td><td>Colors, backgrounds, fonts, spacing, links and tables</td><td>Colorful Web Makeover</td></tr>
+            <tr><td>9</td><td>Box model, shadow and transform</td><td>Box Model Makeover</td></tr>
+            <tr><td>10</td><td>Interactive website</td><td>My Interactive World</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section join-section" id="join">
+      <div>
+        <p class="section-label">WEEK 10</p>
+        <h2>My Interactive World</h2>
+        <p>This form demonstrates labels, text fields, a select menu, a checkbox, focus styles, and a button with hover and active states.</p>
+        <ul class="plain-list">
+          <li>Complete the required fields.</li>
+          <li>Choose one area of interest.</li>
+          <li>Test the button, links, and keyboard focus.</li>
+        </ul>
+      </div>
+      <form class="join-form" action="#" method="get">
+        <label for="student-name">Student name</label>
+        <input id="student-name" name="student-name" type="text" placeholder="Enter your name" required>
+
+        <label for="interest">ICT interest</label>
+        <select id="interest" name="interest" required>
+          <option value="">Select one</option>
+          <option>Web Design</option>
+          <option>Programming</option>
+          <option>Graphic Design</option>
+          <option>Computer Systems</option>
+        </select>
+
+        <label for="message">What do you want to create?</label>
+        <textarea id="message" name="message" rows="4" placeholder="Describe your idea"></textarea>
+
+        <label class="checkbox-row">
+          <input type="checkbox" required>
+          <span>I will practice responsible and respectful technology use.</span>
+        </label>
+        <button class="button submit-button" type="submit">Send My Idea</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Bright Future ICT Club • CSS Learning Example • Grade 9/10</p>
+    <a href="#home">Back to top ↑</a>
+  </footer>
+</body>
+</html>

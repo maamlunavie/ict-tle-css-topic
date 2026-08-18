@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Week 8 – CSS Visual Design and Motion</title><link rel="stylesheet" href="weekly-lessons.css"></head>
+<body>
+  <header class="topbar"><div class="topbar-inner"><a class="brand" href="index.html">CSS Learning Hub</a><nav class="week-nav"><a href="week7.html">Week 7</a><a class="active" href="week8.html">Week 8</a><a href="week9.html">Week 9</a><a href="index.html">Main Page</a></nav></div></header>
+  <section class="lesson-hero"><div class="lesson-hero-inner"><span class="week-label">WEEK 8 • COMPLETE LESSON</span><h1>Colors, Text, Spacing, Links, Tables, and Motion</h1><p>Apply visual-design principles and CSS properties to create readable colors, backgrounds, typography, spacing, navigation, lists, tables, transitions, and animations.</p><div class="hero-links"><a class="hero-button" href="#objectives">Start Lesson</a><a class="hero-button secondary" href="#practice">Go to Activities</a></div></div></section>
+  <main class="lesson-layout">
+    <aside class="toc"><h2>Lesson Contents</h2><ol><li><a href="#objectives">Objectives</a></li><li><a href="#vocabulary">Vocabulary</a></li><li><a href="#colors">Colors</a></li><li><a href="#backgrounds">Backgrounds</a></li><li><a href="#typography">Fonts & Text</a></li><li><a href="#spacing">Spacing & Borders</a></li><li><a href="#links">Links & Icons</a></li><li><a href="#lists-tables">Lists & Tables</a></li><li><a href="#motion">Motion</a></li><li><a href="#practice">Activities</a></li><li><a href="#assessment">Assessment</a></li></ol></aside>
+    <div class="lesson-content">
+      <section class="lesson-section" id="objectives"><h2>Learning Objectives</h2><div class="objective-grid"><ul class="checklist"><li>Use color names, HEX, RGB, and RGBA.</li><li>Create solid, gradient, and image backgrounds.</li><li>Apply readable fonts and text formatting.</li><li>Use margin, padding, and border correctly.</li></ul><ul class="checklist"><li>Style links, icons, lists, and tables.</li><li>Apply hover, focus, and active states.</li><li>Create smooth transitions.</li><li>Build a keyframe animation.</li></ul></div></section>
+      <section class="lesson-section" id="vocabulary"><h2>Essential Vocabulary</h2><dl class="vocabulary"><dt>HEX</dt><dd>A color code using # and six hexadecimal characters.</dd><dt>RGB</dt><dd>A color made from red, green, and blue values.</dd><dt>RGBA</dt><dd>RGB with an alpha value for transparency.</dd><dt>Gradient</dt><dd>A smooth blend between colors.</dd><dt>Typography</dt><dd>The visual arrangement of fonts and text.</dd><dt>Contrast</dt><dd>The difference between foreground and background.</dd><dt>Margin</dt><dd>Space outside a border.</dd><dt>Padding</dt><dd>Space between content and border.</dd><dt>Transition</dt><dd>A smooth change between property values.</dd><dt>Animation</dt><dd>A sequence of stages defined by keyframes.</dd></dl></section>
+      <section class="lesson-section" id="colors"><h2>1. CSS Colors</h2><p>CSS accepts several color formats. Choose colors with clear contrast and use a consistent palette.</p><div class="color-swatch-row"><div class="swatch one">#102a43</div><div class="swatch two">rgb()</div><div class="swatch three">gold</div><div class="swatch four">rgba()</div></div><div class="code-output"><pre><code>h1 { color: navy; }
+p { color: #176b87; }
+.card { color: rgb(36,59,83); }
+.overlay { background: rgba(0,0,0,.5); }</code></pre><div class="output-box"><span class="output-label">COLOR GUIDELINES</span><ul><li>Use a limited palette.</li><li>Keep body text readable.</li><li>Do not rely on color alone.</li><li>Test foreground and background contrast.</li></ul></div></div><div class="remember"><strong>Suggested palette:</strong> dark primary, bright accent, light background, and readable text color.</div></section>
+      <section class="lesson-section" id="backgrounds"><h2>2. Background Properties</h2><div class="concept-grid three"><article class="concept-card"><h3>Solid</h3><code>background-color:#f7f4ea;</code><p>Clean and readable.</p></article><article class="concept-card"><h3>Gradient</h3><code>linear-gradient(...)</code><p>Smooth color blend.</p></article><article class="concept-card"><h3>Image</h3><code>url("photo.jpg")</code><p>Places an image behind content.</p></article></div><pre><code>.hero {
+  background-image: url("school.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}</code></pre><div class="warning"><strong>Readability:</strong> Add an overlay when text appears over a detailed photo.</div></section>
+      <section class="lesson-section" id="typography"><h2>3. Fonts and Text Styling</h2><div class="code-output"><pre><code>body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+h1 {
+  font-family: Georgia, serif;
+  text-align: center;
+  letter-spacing: 1px;
+}</code></pre><div class="output-box"><span class="output-label">ACTUAL OUTPUT</span><p class="font-demo-serif">Georgia for an expressive heading.</p><p class="font-demo-sans">Arial for readable paragraphs.</p></div></div><table class="comparison-table"><thead><tr><th>Property</th><th>Purpose</th><th>Values</th></tr></thead><tbody><tr><td>font-family</td><td>Typeface</td><td>Arial, Georgia, sans-serif</td></tr><tr><td>font-size</td><td>Text size</td><td>16px, 1rem, 2.5rem</td></tr><tr><td>font-weight</td><td>Thickness</td><td>400, 700, bold</td></tr><tr><td>line-height</td><td>Line spacing</td><td>1.5, 1.7</td></tr><tr><td>text-align</td><td>Alignment</td><td>left, center, right</td></tr><tr><td>text-decoration</td><td>Text lines</td><td>none, underline</td></tr><tr><td>text-transform</td><td>Capitalization</td><td>uppercase, capitalize</td></tr></tbody></table></section>
+      <section class="lesson-section" id="spacing"><h2>4. Borders, Margin, and Padding</h2><div class="code-output"><pre><code>.box {
+  margin: 20px;       /* outside */
+  border: 5px solid #176b87;
+  padding: 20px;      /* inside */
+  border-radius: 12px;
+}</code></pre><div class="output-box"><div class="spacing-demo">Padding inside; margin outside.</div></div></div><h3>Shorthand</h3><pre><code>margin: 10px 20px 30px 40px;
+/* top, right, bottom, left */
+
+padding: 15px 25px;
+/* top/bottom, left/right */</code></pre><div class="remember"><strong>Memory guide:</strong> Margin separates boxes; padding gives content breathing room.</div></section>
+      <section class="lesson-section" id="links"><h2>5. Links and Icons</h2><pre><code>a:link { color:#176b87; }
+a:visited { color:#6a4c93; }
+a:hover { color:#b04b19; }
+a:active { color:#d62828; }
+a:focus { outline:3px solid #ffd166; }</code></pre><p>Icons may use image files, SVG, libraries, or Unicode symbols such as ★, ✓, and →. Meaningful image icons need alternative text.</p><div class="note"><strong>User experience:</strong> Hover and keyboard-focus states show that a link is interactive.</div></section>
+      <section class="lesson-section" id="lists-tables"><h2>6. Stylish Lists and Tables</h2><div class="example-grid"><div><h3>Lists</h3><pre><code>ul {
+  list-style-type:square;
+  padding-left:24px;
+}
+li::marker { color:#176b87; }</code></pre></div><div><h3>Tables</h3><pre><code>table {
+  width:100%;
+  border-collapse:collapse;
+}
+th, td {
+  padding:12px;
+  border:1px solid #d9e2ec;
+}</code></pre></div></div><table class="comparison-table"><thead><tr><th>Part</th><th>Recommended Style</th></tr></thead><tbody><tr><td>List</td><td>Readable markers and consistent indentation.</td></tr><tr><td>Table headings</td><td>Strong contrast and bold labels.</td></tr><tr><td>Table cells</td><td>Comfortable padding and clear borders.</td></tr><tr><td>Long table</td><td>Alternating rows and horizontal scrolling.</td></tr></tbody></table></section>
+      <section class="lesson-section" id="motion"><h2>7. Transition and Animation</h2><div class="code-output"><pre><code>.button {
+  transition:transform .25s,
+             background .25s;
+}
+.button:hover {
+  transform:translateY(-5px);
+  background:#b04b19;
+}</code></pre><div class="output-box"><button class="transition-button" type="button">Hover Over Me</button></div></div><h3>Keyframes</h3><div class="code-output"><pre><code>@keyframes pulse {
+  0%,100% { transform:scale(1); }
+  50% { transform:scale(1.15); }
+}
+.square { animation:pulse 2s infinite; }</code></pre><div class="output-box"><div class="animation-square"></div></div></div><div class="warning"><strong>Motion rule:</strong> Animation should guide attention, not distract users.</div></section>
+      <section class="lesson-section" id="practice"><h2>8. Guided and Independent Activities</h2><div class="practice-grid"><article class="practice-card"><h3>Colorful Web Makeover</h3><ol><li>Choose four colors.</li><li>Style page sections.</li><li>Check contrast.</li><li>Explain the choices.</li></ol></article><article class="practice-card"><h3>Spacing Master</h3><ol><li>Find crowded elements.</li><li>Add padding.</li><li>Separate sections with margin.</li><li>Apply borders.</li></ol></article><article class="practice-card"><h3>Link, List, Table Lab</h3><ol><li>Add link states.</li><li>Style markers.</li><li>Improve table rows.</li><li>Test keyboard focus.</li></ol></article><article class="practice-card"><h3>Motion Challenge</h3><ol><li>Add a transition.</li><li>Create an animation.</li><li>Keep motion purposeful.</li><li>Test reduced motion.</li></ol></article></div></section>
+      <section class="lesson-section" id="assessment"><h2>9. Assessment and Mastery Check</h2><div class="assessment-grid"><article class="assessment-card"><h3>Required Output</h3><ul class="checklist"><li>Consistent palette</li><li>Readable typography</li><li>Correct spacing</li><li>Styled links/list/table</li><li>Transition and animation</li></ul></article><article class="assessment-card"><h3>Exit Questions</h3><ol><li>How is RGBA different from RGB?</li><li>Why is contrast important?</li><li>Differentiate margin and padding.</li><li>What does transition control?</li><li>What is @keyframes for?</li></ol></article></div></section>
+    </div>
+  </main>
+  <footer class="page-footer"><p><a href="week7.html">← Week 7</a> • Week 8 Complete Lesson • <a href="week9.html">Week 9 →</a></p></footer>
+</body>
+</html>
